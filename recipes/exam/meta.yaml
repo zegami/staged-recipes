@@ -1,0 +1,65 @@
+package:
+  name: exam
+  version: "0.10.6"
+
+source:
+  fn: exam-0.10.6.tar.gz
+  url: https://pypi.python.org/packages/c7/bd/c15ce029540bb1b551af83c0df502ba47e019ce7132a65db046ad16b8eda/exam-0.10.6.tar.gz
+  md5: 0bf84acc2427a8a3d58d13d7297ff84a
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - exam = exam:main
+    #
+    # Would create an entry point called exam that calls exam.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - mock
+
+  run:
+    - python
+    - mock
+
+test:
+  # Python imports
+  imports:
+    - exam
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    - nose
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/fluxx/exam
+  license: MIT
+  summary: 'Helpers for better testing.'
+  license_family: MIT
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
