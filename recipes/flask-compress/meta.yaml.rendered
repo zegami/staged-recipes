@@ -1,0 +1,25 @@
+# This file created by conda-build 1.21.11+0.g5b44ab3.dirty
+# meta.yaml template originally from:
+# C:\Users\Administrator\work\flask-compress-conda-recipe\flask-compress, last modified Wed Aug 17 15:52:59 2016
+# ------------------------------------------------
+
+package:
+    name: flask-compress
+    version: 1.3.0
+source:
+    fn: Flask-Compress-1.3.0.tar.gz
+    md5: fe3d9b75793699ceec279d37104c1a9c
+    url: https://pypi.python.org/packages/4d/ce/44564d794ff7342ba376a92c88f8bb07f604d5d30f506bcde2834311eda8/Flask-Compress-1.3.0.tar.gz
+build: {}
+requirements:
+    build:
+        - python
+        - setuptools
+        - flask
+    run:
+        - python
+        - flask
+about:
+    home: https://github.com/wichitacode/flask-compress
+    license: MIT License
+    summary: Compress responses in your Flask app with gzip.

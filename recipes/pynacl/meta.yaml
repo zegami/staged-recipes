@@ -1,0 +1,67 @@
+package:
+  name: pynacl
+  version: "1.0.1"
+
+source:
+  fn: PyNaCl-1.0.1.tar.gz
+  url: https://pypi.python.org/packages/dd/99/bc86d40c88c1e1c6c9338d5afa91e3126d1ae28ad1bdfac79ab5b01803df/PyNaCl-1.0.1.tar.gz
+  md5: 12fd03d8ce64e0318cb1c69272f17704
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+# build:
+  # noarch_python: True
+  # preserve_egg_dir: True
+  # entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - pynacl = pynacl:main
+    #
+    # Would create an entry point called pynacl that calls pynacl.main()
+
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+    - six
+    - cffi >=1.1.0
+
+  run:
+    - python
+    - six
+    - cffi >=1.1.0
+
+test:
+  # Python imports
+  imports:
+    - nacl
+    - nacl.bindings
+
+  # commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    - pytest
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/pyca/pynacl/
+  license: Apache License 2.0
+  summary: 'Python binding to the Networking and Cryptography (NaCl) library'
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml

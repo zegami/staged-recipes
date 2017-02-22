@@ -1,0 +1,94 @@
+package:
+  name: raven
+  version: "6.0.0"
+
+source:
+  fn: raven-6.0.0.zip
+  url: https://pypi.python.org/packages/0c/e6/a6e2a56e9f80cc7fd7a466c7c8d353780204c5aeeb07037e588d9dc21947/raven-6.0.0.zip
+  md5: 28063ed6ebb0847aa5f493b3abfff92e
+#  patches:
+   # List any patch files here
+   # - fix.patch
+
+build:
+  # noarch_python: True
+  preserve_egg_dir: True
+  entry_points:
+    # Put any entry points (scripts to be generated automatically) here. The
+    # syntax is module:function.  For example
+    #
+    # - raven = raven:main
+    #
+    # Would create an entry point called raven that calls raven.main()
+
+    - raven = raven.scripts.runner:main
+
+  # If this is a new build for the same version, increment the build
+  # number. If you do not include this key, it defaults to 0.
+  # number: 1
+
+requirements:
+  build:
+    - python
+    - setuptools
+
+  run:
+    - python
+    - setuptools
+
+test:
+  # Python imports
+  imports:
+    - raven
+    - raven.conf
+    - raven.handlers
+    - raven.scripts
+    - raven.transport
+    - raven.utils
+    - raven.utils.serializer
+
+  commands:
+    # You can put test commands to be run here.  Use this to test that the
+    # entry points work.
+
+    - raven --help
+
+  # You can also put a file called run_test.py in the recipe that will be run
+  # at test time.
+
+  requires:
+    - anyjson
+    - blinker >=1.1
+    - bottle
+    - celery >=2.5
+    - django >=1.4
+    - django-celery >=2.5
+    - exam >=0.5.2
+    - flake8 >=2.6,<2.7
+    - flask >=0.8
+    - flask-login >=0.2.0
+    - logbook
+    - mock
+    - nose
+    - pycodestyle
+    - pytest
+    - pytest-django ==2.9.1
+    - pytest-timeout ==0.4
+    - pytz
+    - requests
+    - six
+    - tornado >=4.1
+    - webob
+    - webtest
+    # Put any additional test requirements here.  For example
+    # - nose
+
+about:
+  home: https://github.com/getsentry/raven-python
+  license: BSD
+  summary: 'Raven is a client for Sentry (https://getsentry.com)'
+  license_family: BSD
+
+# See
+# http://docs.continuum.io/conda/build.html for
+# more information about meta.yaml
