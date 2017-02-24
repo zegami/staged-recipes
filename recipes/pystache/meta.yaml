@@ -41,24 +41,7 @@ test:
   imports:
     - pystache
     - pystache.commands
-    - pystache.tests
-    - pystache.tests.data
-    - pystache.tests.data.locator
-    - pystache.tests.examples
 
-  commands:
-    # You can put test commands to be run here.  Use this to test that the
-    # entry points work.
-
-    - pystache --help
-    - pystache-test --help
-
-  # You can also put a file called run_test.py in the recipe that will be run
-  # at test time.
-
-  # requires:
-    # Put any additional test requirements here.  For example
-    # - nose
 
 about:
   home: http://github.com/defunkt/pystache

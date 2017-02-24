@@ -52,16 +52,12 @@ test:
   # You can also put a file called run_test.py in the recipe that will be run
   # at test time.
 
-  requires:
-    - mockupdb
-    # Put any additional test requirements here.  For example
-    # - nose
 
 about:
   home: https://github.com/mongodb/motor/
   license: Apache Software License
   summary: 'Non-blocking MongoDB driver for Tornado or asyncio'
-  license_family: APACHE
+  license_family: None
 
 # See
 # http://docs.continuum.io/conda/build.html for
